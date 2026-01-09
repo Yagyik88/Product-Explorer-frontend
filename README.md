@@ -44,7 +44,11 @@ src/
 ├── lib/
 ├── types/
 └── utils/
-▶️ Getting Started
+
+
+---
+
+## ▶️ Getting Started
 Prerequisites
 
 Node.js (LTS recommended)
@@ -53,8 +57,9 @@ Installation & Run
 npm install
 npm run dev
 
+---
 
-🧠 Assumptions & Trade-offs
+## 🧠 Assumptions & Trade-offs
 
 Client-side filtering is used for simplicity and fast UI response
 
@@ -64,16 +69,4 @@ Server Components are used where appropriate for data fetching
 
 No external state management library is used to keep the app lightweight
 
-
-
-
-
-
 ---
-
-
----
-
-
-
-
