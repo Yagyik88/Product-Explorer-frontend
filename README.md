@@ -48,8 +48,8 @@ The app fetches product data from a public API and allows users to explore, sear
 npm install
 npm run dev
 
-
-Assumptions & Trade-offs
+---
+## 🧠 Assumptions & Trade-offs
 
 Client-side filtering is used for simplicity and performance
 
