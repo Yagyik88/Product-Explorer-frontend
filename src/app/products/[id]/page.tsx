@@ -1,8 +1,9 @@
+export const runtime = "nodejs"
+export const dynamic = "force-dynamic"
+
 import { fetchProductById } from "@/lib/api"
 import { notFound } from "next/navigation"
 import Link from "next/link"
-
-export const dynamic = "force-dynamic"
 
 interface ProductDetailsPageProps {
   params: {
