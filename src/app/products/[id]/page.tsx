@@ -17,7 +17,7 @@ export default async function ProductDetailsPage({
   const product: Product = await fetchProductById(id)
 
   return (
-    <main className="p-6 max-w-5xl mx-auto">
+    <main className="p-6 max-w-6xl mx-auto">
       <Link
         href="/"
         className="inline-block mb-6 text-blue-600 hover:underline"
@@ -25,7 +25,8 @@ export default async function ProductDetailsPage({
         ← Back to products
       </Link>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 bg-white rounded-xl p-6 shadow-sm">
+
         <img
           src={product.image}
           alt={product.title}

@@ -13,7 +13,10 @@ export default function CategoryFilter({
     <select
       value={selected}
       onChange={(e) => onChange(e.target.value)}
-      className="px-4 py-2 border rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+      className="px-4 py-2 rounded-lg border border-gray-300 bg-white
+           focus:outline-none focus:ring-2 focus:ring-blue-500
+           shadow-sm text-sm"
+
     >
       <option value="all">All Categories</option>
 

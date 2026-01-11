@@ -10,7 +10,10 @@ export default function SearchBar({ value, onChange }: SearchBarProps) {
       placeholder="Search products..."
       value={value}
       onChange={(e) => onChange(e.target.value)}
-      className="w-full sm:w-80 px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+      className="w-full sm:w-80 px-4 py-2 rounded-lg border border-gray-300 bg-white
+           focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent
+           placeholder-gray-400 shadow-sm"
+
     />
   )
 }
