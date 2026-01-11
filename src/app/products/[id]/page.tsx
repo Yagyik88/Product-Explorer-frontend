@@ -1,20 +1,23 @@
 import { fetchProductById } from "@/lib/api"
-import { Product } from "@/types/product"
+import { notFound } from "next/navigation"
 import Link from "next/link"
 
+export const dynamic = "force-dynamic"
+
 interface ProductDetailsPageProps {
-  params: Promise<{
+  params: {
     id: string
-  }>
+  }
 }
 
 export default async function ProductDetailsPage({
   params,
 }: ProductDetailsPageProps) {
-  // Next.js 15+/16: params is async
-  const { id } = await params
+  const product = await fetchProductById(params.id)
 
-  const product: Product = await fetchProductById(id)
+  if (!product) {
+    notFound()
+  }
 
   return (
     <main className="p-6 max-w-6xl mx-auto">
@@ -26,7 +29,6 @@ export default async function ProductDetailsPage({
       </Link>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 bg-white rounded-xl p-6 shadow-sm">
-
         <img
           src={product.image}
           alt={product.title}

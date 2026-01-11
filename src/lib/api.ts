@@ -2,9 +2,9 @@ import { Product } from "@/types/product"
 
 const BASE_URL = "https://fakestoreapi.com"
 
-/**
- * Fetch all products
- */
+
+//  * Fetch all products
+ 
 export async function fetchProducts(): Promise<Product[]> {
   const res = await fetch(`${BASE_URL}/products`, {
     cache: "no-store",
@@ -17,17 +17,24 @@ export async function fetchProducts(): Promise<Product[]> {
   return res.json()
 }
 
-/**
- * Fetch a single product by ID
- */
-export async function fetchProductById(id: string): Promise<Product> {
+
+//  * Fetch a single product by ID (SAFE)
+ 
+export async function fetchProductById(
+  id: string
+): Promise<Product | null> {
   const res = await fetch(`${BASE_URL}/products/${id}`, {
     cache: "no-store",
   })
 
   if (!res.ok) {
-    throw new Error(`Failed to fetch product with id ${id}`)
+    return null
   }
 
-  return res.json()
+  const text = await res.text()
+  if (!text) {
+    return null
+  }
+
+  return JSON.parse(text)
 }
